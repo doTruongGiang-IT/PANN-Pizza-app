@@ -1,0 +1,88 @@
+.login {
+    margin-top: 80px;
+    width: 100vw;
+    min-height: calc(100vh - 80px);
+    background-color: #FAF3F3;
+
+    &-section {
+        width: 50%;
+        min-height: calc(100vh - 80px);
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    };
+
+    &-form {
+        background-color: white;
+        box-shadow: 2px 2px 5px #999;
+        width: 400px;
+        height: fit-content;
+        padding: 30px;
+    };
+};
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 20px 0;
+
+    label {
+        font-size: 18px;
+        margin: 10px 0;
+    };
+
+    input {
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        box-shadow: 2px 2px 2px #999;
+        width: 100%;
+
+        &:focus {
+            box-shadow: inset 2px 2px 2px #999;
+        };
+
+        &.ng-invalid.ng-dirty {
+            border: 2px solid red;
+        };
+    };
+};
+
+.action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+
+    button {
+        padding: 10px 25px;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        color: white;
+        font-weight: 600;
+        background-color: orangered;
+        transition: transform 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:active {
+            transform: scale(0.9);
+        };
+    };
+
+    p {
+        color: orangered;
+        cursor: pointer;
+    };
+};
+
+@media screen and (min-width: 414px) and (max-width: 767px) {
+    .login-section {
+        width: 100%;
+    };
+};

@@ -1,0 +1,8 @@
+<div class="pizza-list">
+    <h3 id="all">All Pizzas</h3>
+    <div class="pizza-list-container">
+        <ng-container *ngFor="let pizza of pizzas">
+            <app-pizza-item [pizza]="pizza"></app-pizza-item>
+        </ng-container>
+    </div>
+</div>

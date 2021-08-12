@@ -1,0 +1,42 @@
+<div class="order-status">
+    <div class="order-status-section">
+        <div class="order-status-tracker">
+            <h3>Track delivery status</h3>
+            <div class="order-status-tracker-container">
+                <!-- [style]="{color: 'res.id > statusList[0].id ? lightgray : (statusID.id === statusList[0].id ? orangered : )'}" -->
+                <div class="order-status-details {{result.id > statusList[0].id ? 'done' : (result.id === statusList[0].id ? 'coming' : '')}}" >
+                    <i class="far fa-edit"></i>
+                    <i id="dot" class="fas fa-circle"></i>
+                    <p>Order placed</p>
+                    <p id="transaction">|</p>
+                </div>
+                <div class="order-status-details {{result.id > statusList[1].id ? 'done' : (result.id === statusList[1].id ? 'coming' : '')}}">
+                    <i class="fas fa-check"></i>
+                    <i id="dot" class="fas fa-circle"></i>
+                    <p>Order confirmation</p>
+                    <p id="transaction">|</p>
+                </div>
+                <div class="order-status-details {{result.id > statusList[2].id ? 'done' : (result.id === statusList[2].id ? 'coming' : '')}}">
+                    <i class="fas fa-pizza-slice"></i>
+                    <i id="dot" class="fas fa-circle"></i>
+                    <p>Preparation</p>
+                    <p id="transaction">|</p>
+                </div>
+                <div class="order-status-details {{result.id > statusList[3].id ? 'done' : (result.id === statusList[3].id ? 'coming' : '')}}">
+                    <i class="fas fa-truck"></i>
+                    <i id="dot" class="fas fa-circle"></i>
+                    <p>Out for delivery</p>
+                    <p id="transaction">|</p>
+                </div>
+                <div class="order-status-details {{result.id > statusList[4].id ? 'done' : (result.id === statusList[4].id ? 'coming' : '')}}">
+                    <i class="far fa-laugh-beam"></i>
+                    <i id="dot" class="fas fa-circle"></i>
+                    <p>Complete</p>
+                </div>
+            </div>
+        </div>
+        <div class="order-status-id">
+            <a [routerLink]="['/order']" >Go back</a>
+        </div>
+    </div>
+</div>

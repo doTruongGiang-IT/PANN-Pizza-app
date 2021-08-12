@@ -1,0 +1,32 @@
+<div class="login">
+    <div class="login-section">
+        <div class="login-form">
+            <form [formGroup]="formSignIn" (ngSubmit)="submitFormSignIn()">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email..." 
+                        name="email" 
+                        formControlName="email" 
+                    />
+                </div>
+                <app-errors [control]="formSignIn.controls.email"></app-errors>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input 
+                        type="password" 
+                        placeholder="......" 
+                        name="password" 
+                        formControlName="password"
+                    />
+                </div>
+                <app-errors [control]="formSignIn.controls.password"></app-errors>
+                <div class="form-group action">
+                    <button type="submit">Sign in</button>
+                    <p [routerLink]="['/register']" >Don't have account ?</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

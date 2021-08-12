@@ -1,0 +1,27 @@
+.order-page {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+    width: 100vw;
+    background-color: #FAF3F3;
+};
+
+.order-section {
+    padding: 30px;
+
+    & table {
+        background-color: white;
+        width: 100%;
+
+        & thead tr th, tbody tr td {
+            padding: 10px;
+        };
+    };
+};
+
+#link {
+    color: orangered;
+};
+
+.complete {
+    text-decoration: line-through;
+};

@@ -1,0 +1,94 @@
+.order-status {
+    margin-top: 80px;
+    width: 100vw;
+    min-height: calc(100vh - 80px);
+    background-color: #FAF3F3;
+
+    &-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 80%;
+        margin: auto;
+        padding: 30px 0;
+    };
+
+    &-id {
+        background-color: white;
+        padding: 15px;
+
+        a {
+            color: orangered;
+            font-weight: 600;
+        };
+    };
+
+    &-tracker-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        & .order-status-details:first-child i:nth-child(2) {
+            margin: 15px 28px;
+        };
+
+        & .order-status-details:nth-child(2) i:nth-child(2) {
+            margin: 15px 32px;
+        };
+
+        & .order-status-details:nth-child(3) i:nth-child(2) {
+            margin: 15px 31px;
+        };
+
+        & .order-status-details:nth-child(4) i:nth-child(2) {
+            margin: 15px 24px;
+        };
+
+        & .order-status-details:last-child i:nth-child(2) {
+            margin: 15px 32px;
+        };
+    };
+
+    &-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 30px 0;
+        position: relative;
+
+        i {
+            font-size: 30px;
+        };
+
+        p {
+            font-size: 20px;
+        };
+    };
+
+    #dot {
+        font-size: 8px;
+    };
+
+    #transaction {
+        font-size: 60px;
+        position: absolute;
+        top: 15px;
+        left: 58px;
+    };
+
+};
+
+.done {
+    color: lightgray;
+};
+
+.coming {
+    color: orangered;
+};
+
+@media screen and (min-width: 414px) and (max-width: 767px) {
+    .order-status-id {
+        padding: 5px;
+    }  
+};

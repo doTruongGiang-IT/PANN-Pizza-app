@@ -1,0 +1,123 @@
+.header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-logo {
+        margin-left: 30px;
+        cursor: pointer;
+    };
+
+    &-menu {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        margin-right: 30px;
+
+        &-mobile {
+            display: none;
+            margin-right: 30px;
+            cursor: pointer;
+        };
+    };
+
+    &-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+
+        &-mobileContainer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #666;
+        };
+
+        &-mobile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            margin-top: 50px;
+        };
+
+        &-item {
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+
+            &:nth-child(1):hover,
+            &:nth-child(2):hover,
+            &:nth-child(3):hover {
+                border-bottom: 3px solid orangered;
+            };
+
+            &:last-child {
+                padding: 8px 20px;
+                background-color: orangered;
+                border-radius: 30px;
+            };
+
+            &-mobile {
+                margin: 10px 0;
+                color: white;
+                font-weight: 500;
+                font-size: 20px;
+                cursor: pointer;
+
+                &:nth-child(1):hover,
+                &:nth-child(2):hover,
+                &:nth-child(3):hover {
+                    border-bottom: 3px solid orangered;
+                };
+
+                &:last-child {
+                    padding: 8px 20px;
+                    background-color: orangered;
+                    border-radius: 30px;
+                };
+            };
+        };
+    };
+};
+
+#closeMenu {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+};
+
+.open {
+    display: block;
+};
+
+@media screen and (min-width: 414px) and (max-width: 767px) {
+    .header {
+        &-menu {
+            display: none;
+
+            &-mobile {
+                display: block;
+            };
+        };
+    };
+};

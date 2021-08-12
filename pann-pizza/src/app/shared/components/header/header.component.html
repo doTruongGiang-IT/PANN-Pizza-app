@@ -1,0 +1,86 @@
+<header class="header">
+    <div class="header-logo" [routerLink]="['/list']">
+        <img
+            nz-image
+            width="150px"
+            height="60px"
+            nzSrc="../../../../assets/logo.png"
+            alt="logo"
+            nzDisablePreview=true
+        />
+    </div>
+    <div class="header-menu">
+        <ul class="header-list">
+            <li class="header-list-item">Menu</li>
+            <li class="header-list-item">Offers</li>
+            <ng-container *ngIf="authService.user$ as user;else order">
+                <ng-container *ngIf="user.role === 'user';else admin">
+                    <li class="header-list-item" [routerLink]="['/order']">Orders</li>
+                </ng-container>
+                <ng-template #admin>
+                    <li class="header-list-item" [routerLink]="['/dashboard']">Dashboard</li>
+                </ng-template>
+            </ng-container>
+            <ng-template #order>
+                <li class="header-list-item" [routerLink]="['/order']">Orders</li>
+            </ng-template>
+            <li class="header-list-item">
+                <ng-container *ngIf="authService.user$ as user;else guest">
+                    <nz-avatar [nzSize]="40" nzIcon="user" [nzSrc]="user.profile" (click)="logout()"></nz-avatar>
+                </ng-container>
+                <ng-template #guest>
+                    <nz-avatar [nzSize]="40" nzIcon="user" [routerLink]="['/login']"></nz-avatar>
+                </ng-template>
+            </li>
+            <li class="header-list-item" [routerLink]="['/cart']">
+                <img
+                    nz-image
+                    width="25px"
+                    height="25px"
+                    nzSrc="../../../../assets/cart.png"
+                    alt="logo"
+                    nzDisablePreview=true
+                />
+            </li>
+        </ul>
+    </div>
+    <div class="header-menu-mobile" (click)="openMenuMobile()">
+        <i nz-icon nzType="menu" nzTheme="outline" style="font-size: 30px"></i>
+    </div>
+    <div class="header-list-mobileContainer w3-container w3-center w3-animate-right">
+        <i id="closeMenu" nz-icon nzType="close" nzTheme="outline" style="font-size: 22px" (click)="closeMenuMobile()"></i>
+        <ul class="header-list-mobile">
+            <li class="header-list-item-mobile">Menu</li>
+            <li class="header-list-item-mobile">Offers</li>
+            <ng-container *ngIf="authService.user$ as user;else order">
+                <ng-container *ngIf="user.role === 'user';else admin">
+                    <li class="header-list-item-mobile" [routerLink]="['/order']">Orders</li>
+                </ng-container>
+                <ng-template #admin>
+                    <li class="header-list-item-mobile" [routerLink]="['/dashboard']">Dashboard</li>
+                </ng-template>
+            </ng-container>
+            <ng-template #order>
+                <li class="header-list-item-mobile" [routerLink]="['/order']">Orders</li>
+            </ng-template>
+            <li class="header-list-item-mobile">
+                <ng-container *ngIf="authService.user$ as user;else guest">
+                    <nz-avatar [nzSize]="40" nzIcon="user" [nzSrc]="user.profile" (click)="logout()"></nz-avatar>
+                </ng-container>
+                <ng-template #guest>
+                    <nz-avatar [nzSize]="40" nzIcon="user" [routerLink]="['/login']"></nz-avatar>
+                </ng-template>
+            </li>
+            <li class="header-list-item-mobile" [routerLink]="['/cart']">
+                <img
+                    nz-image
+                    width="25px"
+                    height="25px"
+                    nzSrc="../../../../assets/cart.png"
+                    alt="logo"
+                    nzDisablePreview=true
+                />
+            </li>
+        </ul>
+    </div>
+</header>

@@ -1,0 +1,19 @@
+<div class="pizza" *ngIf="pizza">
+    <div class="pizza-image">
+        <img
+            nz-image
+            width="200px"
+            height="200px"
+            [nzSrc]="pizza.image"
+            alt=""
+        />
+    </div>
+    <div class="pizza-info">
+        <h4>{{pizza.name}}</h4>
+        <p>{{pizza.size}}</p>
+        <div class="pizza-add">
+            <h4>${{pizza.price}}</h4>
+            <button type="button" (click)="addToCart(pizza)"><i nz-icon nzType="plus" nzTheme="outline"></i> Add to cart</button>
+        </div>
+    </div>
+</div>

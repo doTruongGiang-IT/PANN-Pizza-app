@@ -1,0 +1,24 @@
+<div class="order-page">
+    <div class="order-section">
+        <h3>All Orders</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Orders</th>
+                    <th>Address</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <!-- *ngIf="checkoutService.orders$ | async as orders" -->
+            <tbody>
+                <ng-container *ngFor="let order of orders">
+                    <tr class="{{order.status === 'Complete' ? 'complete' : ''}}">
+                        <td><a id="link" [routerLink]="['/order', order.status]">{{order.id}}</a></td>
+                        <td>{{order.address}}</td>
+                        <td>{{order.placed_at}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

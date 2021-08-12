@@ -1,0 +1,42 @@
+<div class="admin">
+    <div class="admin-section">
+        <h3>All Orders</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Orders</th>
+                    <th>Customer</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                    <th>Placed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of admin_orders">
+                    <td>
+                        {{order.id}}
+                        <ng-container *ngIf="order.pizzaName">
+                            <p>{{order.pizzaName.name}} -2Pcs</p>
+                        </ng-container>
+                    </td>
+                    <td>
+                        <ng-container *ngIf="order.cusName">
+                            {{order.cusName.username}}
+                        </ng-container> 
+                    </td>
+                    <td>{{order.address}}</td>
+                    <td>
+                        <select id="status" [(ngModel)]="order.status" (click)="updateStatus(order.id, order.status)">
+                            <option value="Order placed">Order placed</option>
+                            <option value="Order confirmation">Order confirmation</option>
+                            <option value="Preparation">Preparation</option>
+                            <option value="Out for delivery">Out for delivery</option>
+                            <option value="Complete">Complete</option>
+                        </select>
+                    </td>
+                    <td>{{order.placed_at}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

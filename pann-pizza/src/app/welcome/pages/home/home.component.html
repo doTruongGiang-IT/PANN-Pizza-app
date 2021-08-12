@@ -1,0 +1,6 @@
+<div class="home-page">
+    <app-banner></app-banner>
+    <ng-container *ngIf="pizzas">
+        <app-pizza-list [pizzas]="pizzas"></app-pizza-list>
+    </ng-container>
+</div>

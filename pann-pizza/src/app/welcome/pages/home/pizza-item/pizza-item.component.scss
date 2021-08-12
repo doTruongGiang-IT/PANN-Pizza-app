@@ -1,0 +1,45 @@
+.pizza {
+    width: 300px;
+    height: fit-content;
+    margin: 20px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    };
+
+    &-add {
+        width: 300px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        button {
+            padding: 5px 20px;
+            border: 1px solid orangered;
+            border-radius: 20px;
+            color: orangered;
+            background-color: white;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                border: none;
+                background-color: orangered;
+                color: white;
+            };
+
+            &:active {
+                transform: scale(0.9);
+            };
+        }
+    };
+};

@@ -1,0 +1,53 @@
+<div class="cart">
+    <!-- *ngIf="pizzaService.cartProducts$ | async as cart" -->
+    <div class="cart-section" *ngIf="pizzaService.cartProducts$ | async as cart">
+        <ng-container *ngIf="cart.length !== 0;else nodata">
+            <div class="cart-logo">
+                <img
+                    nz-image
+                    width="30px"
+                    height="30px"
+                    nzSrc="../../../../assets/cart-black.png"
+                    alt=""
+                />
+                <h3>Order Summary</h3>
+            </div>
+            <div class="cart-container">
+                <ng-container *ngFor="let item of cart">
+                    <app-cart-item [item]="item"></app-cart-item>
+                </ng-container>
+            </div>
+            <div class="cart-total">
+                <div class="total">
+                    <h4>Total Amount: <strong>${{total}}</strong></h4>
+                </div>
+                <input  type="text" placeholder="Enter your address" name="address" [(ngModel)]="address" />
+                <ng-container *ngIf="user && address;else disabled">
+                    <button type="button" (click)="order(cart)">Order now</button>
+                </ng-container>
+                <ng-template #disabled>
+                    <button type="button" disabled="true">Can't order</button>
+                </ng-template>
+                
+            </div>
+        </ng-container>
+
+        <ng-template #nodata>
+            <div class="cart-empty">
+                <div class="cart-empty-desc">
+                    <h2>Cart Empty</h2>
+                    <p>You probably haven't  ordered a pizza yet</p>
+                    <p>To order pizza go to the main page</p>
+                </div>
+                <img
+                    nz-image
+                    width="500px"
+                    height="400px"
+                    nzSrc="../../../../assets/empty-cart.png"
+                    alt=""
+                />
+                <button type="button" [routerLink]="['/list']" >Go back</button>
+            </div>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="cart-item" *ngIf="item">
+    <div class="cart-item-info">
+        <img
+            nz-image
+            width="100px"
+            height="100px"
+            [nzSrc]="item.image"
+            alt=""
+        />
+        <div class="cart-item-subinfo">
+            <h4>{{item.name}}</h4>
+            <p>{{item.size}}</p>
+        </div>
+    </div>
+    <div class="cart-item-qty">
+        <p>{{item.qty}}Pcs</p>
+    </div>
+    <div class="cart-item-price">
+        <p>${{item.price}}</p>
+    </div>
+    <div class="cart-item-remove" (click)="removeItem(item.id)">
+        <i nz-icon nzType="delete" nzTheme="outline"></i>
+    </div>
+</div>

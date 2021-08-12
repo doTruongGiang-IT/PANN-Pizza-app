@@ -1,0 +1,42 @@
+.banner {
+    background-color: #FAF3F3;
+    width: 100vw;
+    height: fit-content;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-text {
+        font-weight: 600;
+
+        p {
+            font-style: italic;
+        };
+
+        a {
+            color: white;
+            padding: 10px 20px;
+            background-color: orangered;
+            border-radius: 20px;
+            outline: none;
+        }
+    };
+};
+
+@media screen and (min-width: 414px) and (max-width: 767px) {
+    .banner {
+        justify-content: center;
+
+        &-logo {
+            display: none;
+        };
+    };
+};
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .banner-logo img {
+        width: 400px;
+        height: 350px;
+    };
+};
